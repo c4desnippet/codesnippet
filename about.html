@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>About Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Abouttest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="/Dark.css">
+        <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+  <style type="text/css" media="all">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.about-wrapper{
+    height: 100vh;
+}
+.about-left{
+    background: #f26a8d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.about-left-content > div{
+    background: #f49cbb;
+    padding: 4rem 4rem 2.5rem 5rem;
+    text-align: center;
+}
+.about-left-content{
+    box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+}
+.about-img img{
+    display: block;
+    width: 200px;
+}
+.about-img{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+.shadow{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+}
+.shadow::after{
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    height: 7px;
+    width: 50px;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+.shadow:hover .about-img{
+    transform: translateY(-10px);
+}
+.shadow:hover::after{
+    opacity: 1;
+}
+.about-left-content h2{
+    font-size: 2rem;
+    margin: 2.2rem 0 0.6rem 0;
+    line-height: 1.2;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #edffec;
+}
+.about-left-content h3{
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-top: 1.2rem;
+}
+.icons{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem 0;
+}
+.icons li{
+    list-style-type: none;
+    background: #f36a8d;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.icons li:hover{
+    background: #edffec;
+    color: #000;
+}
+.about-right{
+    background: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem;
+    text-align: center;
+}
+.about-right h1{
+    font-size: 7rem;
+    text-transform: uppercase;
+}
+.about-right h1 span{
+    color: #dd2d4a;
+}
+.about-right h2{
+    font-weight: 600;
+}
+.about-btns{
+    display: flex;
+    margin: 2rem 0;
+}
+.btn{
+    border: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 0.55rem 0;
+    width: 130px;
+    font-weight: 600;
+    background: transparent;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.btn.btn-pink{
+    background: #dd2d4a;
+    color: #fff;
+    border-color: #dd2d4a;
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-pink:hover{
+    background: transparent;
+    border-color: #dd2d4a;
+    color: #000;
+}
+.btn.btn-white{
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-white:hover{
+    background: #dd2d4a;
+    border-color: #dd2d4a;
+    color: #fff;
+}
+.about-para p{
+    font-weight: 300;
+    padding: 0.5rem;
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 992px){
+    .about-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-left{
+        position: relative;
+    }
+    .about-left-content{
+        position: absolute;
+        right: -50px;
+    }
+} 
+  /*footer*/
+  .col_white_amrc {
+    color: #CEE5FF;
+  }
+
+  footer {
+    width: 100%;
+    background-color: black;
+    min-height: 250px;
+    padding: 10px 0px 25px 0px;
+
+  }
+
+  .pt2 {
+    padding-top: 40px;
+    margin-bottom: 20px;
+
+  }
+
+  footer p {
+    font-size: 13px;
+    color: #DBECFF;
+    padding-bottom: 0px;
+    margin-bottom: 8px;
+
+  }
+
+  .mb10 {
+    padding-bottom: 15px;
+
+  }
+
+  .footer_ul_amrc {
+    margin: 0px;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 0px 0px 10px 0px;
+    text-decoration: none;
+  }
+
+  .footer_ul_amrc li {
+    padding: 0px 0px 5px 0px;
+
+
+  }
+
+  .footer_ul_amrc li a {
+    color: #DBECFF;
+
+  }
+
+  .footer_ul_amrc li a:hover {
+    color: #DBECFF;
+
+  }
+
+  .fleft {
+    float: left;
+
+  }
+
+  .padding-right {
+    padding-right: 10px;
+  }
+
+  .footer_ul2_amrc {
+    margin: 0px;
+    list-style-type: none;
+    padding: 0px;
+
+  }
+
+  .footer_ul2_amrc li p {
+    display: table;
+  }
+
+  .footer_ul2_amrc li a:hover {
+    text-decoration: none;
+  }
+
+  .footer_ul2_amrc li i {
+    margin-top: 5px;
+  }
+
+  .bottom_border {
+    border-bottom: 1px solid #DBECFF;
+    padding-bottom: 20px;
+  }
+
+  .foote_bottom_ul_amrc {
+    list-style-type: none;
+    padding: 0px;
+    display: table;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+
+  }
+
+  .foote_bottom_ul_amrc li {
+    display: inline;
+  }
+
+  .foote_bottom_ul_amrc li a {
+    color: #DBECFF;
+    margin: 0 12px;
+  }
+
+  .social_footer_ul {
+    display: table;
+    margin: 15px auto 0 auto;
+    list-style-type: none;
+  }
+
+  .social_footer_ul li {
+    padding-left: 20px;
+    padding-top: 10px;
+    float: left;
+  }
+
+  .social_footer_ul li a {
+    color: #A6FFF9;
+    border: 1px solid #CCC;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  .social_footer_ul li i {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+  </style>
+  <body>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> Code Snippet </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/Snippets.html">Snippets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/contact.html">Contact</a>
+        </li>
+          </ul>
+      </ul>
+  
+    
+    </div>
+  </div>
+</nav> 
+
+    <div class = "about-wrapper">
+      <div class = "about-left">
+        <div class = "about-left-content">
+          <div>
+            <div class = "shadow">
+              <div class = "about-img">
+                <img src = "about-img.jpg" alt = "about image">
+              </div>
+            </div>
+
+            <h2>SouL Spidy<br></h2>
+            <h3>Student</h3>
+          </div>
+
+          <ul class = "icons">
+            <li><i class = "fab fa-github"></i></li>
+            <li><i class = "fab fa-twitter"></i></li>
+            <li><i class = "fab fa-linkedin"></i></li>
+            <li><i class = "fab fa-instagram"></i></li>
+          </ul>
+        </div>
+      </div>
+   </div>
+<div class="container">
+      <div class = "about-right">
+        <h1>hi&nbsp;<span>!</span></h1>
+        <h5>About Our Site</h5>
+        <div class = "about-btns">
+          <button type = "button" class = "btn btn-outline-pink disabled">projects</button>
+  <button type = "button" class = "btn btn-outline-primary"><a href="/contact.html" style="text-decoration: none; color: black;"> Contact Us</a></button>
+        </div>
+
+        <div class = "about-para">
+          <p>The information provided on this website does not, and is not intended to, constitute legal advice; instead, all information, content, and materials available on this site are for general informational purposes only.  Information on this website may not constitute the most up-to-date legal or other information.</p><p>  This website contains links to other third-party websites.  Such links are only for the convenience of the reader, user or browser; the Code Snippet and its members do not recommend or endorse the contents of the third-party sites.</p>
+          <p><b>If you face any issue on our site then you can contact us</b></p>
+        </div>
+      </div>
+    </div>
+ 
+
+  <footer class="footer">
+    <div class="container bottom_border">
+    </div>
+    <div class="container">
+      <ul class="foote_bottom_ul_amrc">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Snippets</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <!--foote_bottom_ul_amrc ends here-->
+      <p class="text-center">Copyright @2020-2021 | All Right Reserved <a href="#"></a></p>
+      <ul class="social_footer_ul">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <!--social_footer_ul ends here-->
+    </div>
+  </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+  </body>
+</html>
